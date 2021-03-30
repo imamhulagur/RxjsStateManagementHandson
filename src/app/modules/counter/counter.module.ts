@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CounterShellComponent } from './components/counter-shell/counter-shell.component';
-
-
+import { CounterShellComponent } from './counter-shell/counter-shell.component';
 
 @NgModule({
-  declarations: [CounterShellComponent],
-  imports: [
-    CommonModule
-  ]
+    declarations: [CounterShellComponent],
+    imports: [CommonModule],
 })
-export class CounterModule { }
+export class CounterModule {}

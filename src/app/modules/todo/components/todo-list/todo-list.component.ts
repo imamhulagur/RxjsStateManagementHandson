@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+} from '@angular/core';
+import { Todo } from '../../models/todo';
 
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+    selector: 'app-todo-list',
+    templateUrl: './todo-list.component.html',
+    styleUrls: ['./todo-list.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoListComponent implements OnInit {
+    @Input()
+    todos: Todo[];
 
-  constructor() { }
+    @Input()
+    selectedTodo: Todo;
 
-  ngOnInit(): void {
-  }
+    @Output()
+    selectTodo: EventEmitter<Todo> = new EventEmitter();
 
+    constructor() {}
+
+    ngOnInit(): void {}
 }
